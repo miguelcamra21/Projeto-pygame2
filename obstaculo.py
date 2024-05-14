@@ -6,7 +6,7 @@ class Obstaculo:
         self.largura = largura
         self.altura = altura
         self.imagem =  pygame.transform.scale(self.imagem,(self.largura,self.altura))
-        self.posX = random.randint(100,600)
+        self.posX = random.randint(250,550)
         self.posY = posY
         self.vel = random.randint(5,10)
         self.mascara = pygame.mask.from_surface(self.imagem)
@@ -18,4 +18,5 @@ class Obstaculo:
         self.posY = self.posY + self.vel
         if self.posY >= 710:
             self.posY = 0
-            self.vel = random.randint(5,20)
+            self.vel = random.randint(5,10)
+            self.posX = random.randint(250,550)
