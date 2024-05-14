@@ -23,9 +23,11 @@ list_ruins = [Obstaculo("imagens/maça.png",90,60,0),
               Obstaculo("imagens/abacate.png",90,60,0)]           
 
 fonte = pygame.font.SysFont("Arial Black",16)
-fonte_derrota = pygame.font.SysFont("Arial Black",72)
-fonte_vitoria = pygame.font.SysFont("Arial Black",72)
+fonte_derrota = pygame.font.SysFont("Arial Black",16)
+fonte_vitoria = pygame.font.SysFont("Arial Black",16)
+fonte2 = pygame.font.SysFont("Arial Black",16)
 pontos = 0
+vidas = 5
 
 clock = pygame.time.Clock()
 rodando = True
@@ -40,6 +42,7 @@ while rodando:
     tela.blit(FUNDO,(0,0))
     jogador1.apareca(tela)
     jogador1.movimentosPorTeclas(pygame.K_RIGHT,pygame.K_LEFT)
+    jogador1.poder_especial(pygame.K_SPACE)
     
 
     for comidas in list_bons:
@@ -55,7 +58,7 @@ while rodando:
             texto_vitoria = fonte.render("Você Ganhou!",False,(0,255,0))
             tela.blit(texto_vitoria,(400,250))
             pygame.display.update()
-            pygame.time.wait(1500)
+            pygame.time.wait(250)
             rodando = False
             
 
@@ -64,10 +67,10 @@ while rodando:
         comidas_ruins.movimentosSozinho()
 
         if jogador1.mascara.overlap(comidas_ruins.mascara,(jogador1.posX - comidas_ruins.posX,jogador1.posY - comidas_ruins.posY)):
-            texto_derrota = fonte.render("Você Perdeu",False,(255,0,0))
+            texto_derrota = fonte.render("Você Perdeu",False,(225,0,0))
             tela.blit(texto_derrota,(400,250))
             pygame.display.update()
-            pygame.time.wait(1500)
+            pygame.time.wait(1250)
             rodando = False
             
             

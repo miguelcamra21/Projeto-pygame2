@@ -22,3 +22,9 @@ class Jogador:
         elif keys [esquerda]:
             if self.posX > 0:
                 self.posX= self.posX - 5
+
+    def poder_especial(self,tecla):
+        keys = pygame.key.get_pressed()
+        if keys [tecla]:
+            self.posX = 0
+            self.posY = 420
