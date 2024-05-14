@@ -11,9 +11,11 @@ tela.fill((0,100,255))
 jogador1 = Jogador("imagens/scooby.png",100,80,0,420)
 
 
-list_bons = [Obstaculo("imagens/icons8-pizza-48.png",90,60,440),
+list_bons = [Obstaculo("imagens/icons8-pizza-48.png",90,60,0),
              Obstaculo("imagens/burguer.png",90,60,0),
-             Obstaculo("imagens/coca.png",90,60,0)]
+             Obstaculo("imagens/coca.png",90,60,0),
+             Obstaculo("imagens/batata-frita.png",90,60,0),
+             Obstaculo("imagens/lasanha.png",90,60,0)]
              
 
 fonte = pygame.font.SysFont("Arial Black",16)
@@ -38,16 +40,14 @@ while rodando:
         comidas.movimentosSozinho()
 
         if jogador1.mascara.overlap(comidas.mascara,(jogador1.posX - comidas.posX,jogador1.posY - comidas.posY)):
-            jogador1.posX = 0
-            jogador1.posY = 420
-            pontos = pontos - 1
+            pontos = pontos + 1
 
         if jogador1.posY == 0:
             jogador1.posX = 0
             jogador1.posY = 420
             pontos = pontos + 1
 
-    texto_scooby = fonte.render(f"Pontuação Zé: {pontos} ",False,(255,0,0))
+    texto_scooby = fonte.render(f"Pontuação Zé: {pontos} ",False,(0,0,0))
     tela.blit(texto_scooby,(0,0))
     pygame.display.update()
     clock.tick(90)
