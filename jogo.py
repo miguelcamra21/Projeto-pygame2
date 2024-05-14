@@ -6,6 +6,8 @@ pygame.init()
 tela = pygame.display.set_mode((800,500))
 tittle = pygame.display.set_caption("Miguel")
 tela.fill((0,100,255))
+FUNDO = pygame.image.load("imagens/Fundo.jpg")
+FUNDO = pygame.transform.scale(FUNDO (800,500))
 
 
 jogador1 = Jogador("imagens/scooby.png",100,80,0,420)
