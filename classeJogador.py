@@ -14,7 +14,7 @@ class Jogador:
     def apareca(self,tela):
         tela.blit(self.imagem,(self.posX,self.posY))
     
-    def movimentosPorTeclas (self,cima,baixo,direita,esquerda):
+    def movimentosPorTeclas (self,direita,esquerda):
         keys = pygame.key.get_pressed()
         if keys [direita]:    
             if self.posX < 800 - self.largura:   
@@ -22,9 +22,3 @@ class Jogador:
         elif keys [esquerda]:
             if self.posX > 0:
                 self.posX= self.posX - 5
-        elif keys [cima]:
-            if self.posY > 0:
-                self.posY = self.posY - 5
-        elif keys [baixo]:
-            if self.posY < 500 - self.altura:
-                self.posY = self.posY+ 5
