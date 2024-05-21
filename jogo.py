@@ -64,7 +64,7 @@ while rodando:
         comidas_ruins.apareca(tela)
         comidas_ruins.movimentosSozinho()
 
-        if jogador1.mascara.overlap(comidas_ruins.mascara,(jogador1.posX - comidas_ruins.posX,jogador1.posY - comidas_ruins.posY)):
+        if jogador1.mascara.overlap(comidas_ruins.mascara,(comidas_ruins.posX - jogador1.posX,comidas_ruins.posY - jogador1.posY)):
             texto_derrota = fonte2.render("Você Perdeu",False,(225,0,0))
             tela.blit(texto_derrota,(250,250))
             pygame.display.update()
